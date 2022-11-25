@@ -20,11 +20,19 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 
+// Para trabalhar com formulários no Angular 12
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { ToastrModule } from 'ngx-toastr';
+import { HttpClientModule } from '@angular/common/http';
+
+
+
 //componentes do projectos
 import { NavComponent } from './components/nav/nav.component';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
-import { ListComponent } from './pages/tecnico/list/list.component';
+import { TecnicoListComponent } from './pages/tecnico-list/tecnico-list.component';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -32,13 +40,19 @@ import { ListComponent } from './pages/tecnico/list/list.component';
     NavComponent,
     HomeComponent,
     HeaderComponent,
-    ListComponent
+    TecnicoListComponent,
+    LoginComponent
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+// Forms
+     FormsModule,
+     ReactiveFormsModule,
+     // Requisições http
+
     // Angular Material
     MatFormFieldModule,
     MatPaginatorModule,
@@ -54,6 +68,13 @@ import { ListComponent } from './pages/tecnico/list/list.component';
     MatIconModule,
     MatListModule,
     MatCardModule,
+    ToastrModule.forRoot({
+      timeOut:4000,
+      closeButton:true,
+      progressBar:true
+    }),
+    HttpClientModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
