@@ -1,6 +1,26 @@
+
+
 <div class="container">
 
-    <div class="mat-elevation-z8 container">
+  <h1>Lista de Tecnico</h1>
+  <div class="form-container">
+   
+    <button mat-raised-button color="primary"   class="button">
+      Novo
+    </button>
+    <button
+        mat-raised-button
+      
+        class="button">
+      Remove data
+    </button>
+    <mat-form-field class="input-search-container">
+      <mat-label>Filter</mat-label>
+      <input class="input-search" matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+    </mat-form-field>
+  </div>
+    <div class="mat-elevation-z8 ">
+      
         <table mat-table [dataSource]="dataSource">
       
           <!-- Position Column -->

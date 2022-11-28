@@ -33,6 +33,8 @@ import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { TecnicoListComponent } from './pages/tecnico-list/tecnico-list.component';
 import { LoginComponent } from './pages/login/login.component';
+import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
+import { TecnicoCreateComponent } from './pages/tecnico-create/tecnico-create.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { LoginComponent } from './pages/login/login.component';
     HomeComponent,
     HeaderComponent,
     TecnicoListComponent,
-    LoginComponent
+    LoginComponent,
+    TecnicoCreateComponent,
+    
     
   ],
   imports: [
@@ -75,8 +79,9 @@ import { LoginComponent } from './pages/login/login.component';
     }),
     HttpClientModule,
     
+    
   ],
-  providers: [],
+  providers: [AuthInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -7,4 +7,25 @@ table {
     width: 100%;
     margin: 1rem;
   }
+  .form-container{
+    padding: 1rem;
+  }
+  .input-search-container{
+    float: right;
+    width: 10rem;
+    top:-1rem;
+    position: relative;
+    left:1rem;
+  }
+
+  .input-search-container .input-search{
+
+    size:5rem;
+  }
+  .button{
+    margin-left: 10px;
+  }
+  h1{
+    text-align: center;
+  }
   

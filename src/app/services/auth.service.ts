@@ -30,6 +30,10 @@ export class AuthService {
     this.router.navigate(['home']);
   }
 
+  logout(){
+    localStorage.clear();
+    this.router.navigate(['login']);
+  }
   isAuthenticated(){
     
     let token = localStorage.getItem('token');
