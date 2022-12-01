@@ -28,4 +28,10 @@ table {
   h1{
     text-align: center;
   }
-  
+  .edit{
+    color:rgb(60, 131, 224)
+  }
+
+  .delete{
+    color:#cf1f31
+  }

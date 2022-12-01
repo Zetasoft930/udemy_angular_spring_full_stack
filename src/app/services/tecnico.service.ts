@@ -16,4 +16,8 @@ export class TecnicoService {
     return this.htpp.get<Tecnico[]>(`${API_CONFIG.baseUrl}/tecnico`);
 
   }
+  create(tecnico:Tecnico):Observable<Tecnico>
+  {
+    return this.htpp.post<Tecnico>(`${API_CONFIG.baseUrl}/tecnico`,tecnico);
+  }
 }
