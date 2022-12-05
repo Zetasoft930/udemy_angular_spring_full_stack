@@ -20,4 +20,16 @@ export class TecnicoService {
   {
     return this.htpp.post<Tecnico>(`${API_CONFIG.baseUrl}/tecnico`,tecnico);
   }
+  update(tecnico:Tecnico):Observable<Tecnico>
+  {
+    return this.htpp.put<Tecnico>(`${API_CONFIG.baseUrl}/tecnico/${tecnico.id}`,tecnico);
+  }
+  delete(tecnico:Tecnico):Observable<Tecnico>
+  {
+    return this.htpp.delete<Tecnico>(`${API_CONFIG.baseUrl}/tecnico/${tecnico.id}`);
+  }
+  findById(id:any):Observable<Tecnico>
+  {
+    return this.htpp.get<Tecnico>(`${API_CONFIG.baseUrl}/tecnico/${id}`);
+  }
 }

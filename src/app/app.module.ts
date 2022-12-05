@@ -36,6 +36,14 @@ import { LoginComponent } from './pages/login/login.component';
 import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
 import { TecnicoCreateComponent } from './pages/tecnico-create/tecnico-create.component';
 import { NgxMaskModule } from 'ngx-mask';
+import { TecnicoUpdateComponent } from './pages/tecnico-update/tecnico-update.component';
+import { TecnicoDeleteComponent } from './pages/tecnico-delete/tecnico-delete.component';
+import { ClienteListComponent } from './pages/cliente-list/cliente-list.component';
+import { ClienteCreateComponent } from './pages/cliente-create/cliente-create.component';
+import { ClienteUpdateComponent } from './pages/cliente-update/cliente-update.component';
+import { ClienteDeleteComponent } from './pages/cliente-delete/cliente-delete.component';
+import { ChamadoListComponent } from './pages/chamado/chamado-list/chamado-list.component';
+import { ChamadoCreateComponent } from './pages/chamado-create/chamado-create.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +54,14 @@ import { NgxMaskModule } from 'ngx-mask';
     TecnicoListComponent,
     LoginComponent,
     TecnicoCreateComponent,
+    TecnicoUpdateComponent,
+    TecnicoDeleteComponent,
+    ClienteListComponent,
+    ClienteCreateComponent,
+    ClienteUpdateComponent,
+    ClienteDeleteComponent,
+    ChamadoListComponent,
+    ChamadoCreateComponent,
     
     
   ],
