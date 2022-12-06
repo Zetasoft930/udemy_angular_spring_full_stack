@@ -108,15 +108,22 @@ export class ChamadoUpdateComponent implements OnInit{
 
       });
   }
-
-  create(){
+  getStatus(status:any)
+  {
+    return this.service.getStatus(status);
+  }
+  getPrioridade(prioridade:any)
+  {
+    return this.service.getPrioridade(prioridade);
+  }
+  update(){
 
     this.chamado.tecnico = this.getPessoa(this.tecnicoID,'dev');
     this.chamado.cliente = this.getPessoa(this.clienteID,'dev');
 
-    this.service.create(this.chamado).subscribe(()=>{
+    this.service.update(this.chamado).subscribe(()=>{
 
-      this.toast.success('Tecnico cadastrado com sucesso','Cadastro');
+      this.toast.success('Chamado Actualizado com sucesso','Actualizado');
       this.router.navigate(['chamado']);
 
     },ex =>{
