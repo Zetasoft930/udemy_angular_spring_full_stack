@@ -9,13 +9,14 @@ import { Tecnico } from 'src/app/models/tecnico';
 import { ChamadoService } from 'src/app/services/chamado.service';
 import { ClienteService } from 'src/app/services/cliente.service';
 import { TecnicoService } from 'src/app/services/tecnico.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-chamado-create',
-  templateUrl: './chamado-create.component.html',
-  styleUrls: ['./chamado-create.component.css']
+  selector: 'app-chamado-update',
+  templateUrl: './chamado-update.component.html',
+  styleUrls: ['./chamado-update.component.css']
 })
-export class ChamadoCreateComponent implements OnInit{
+export class ChamadoUpdateComponent implements OnInit{
   
   chamado:Chamado ={
 
@@ -41,12 +42,17 @@ export class ChamadoCreateComponent implements OnInit{
     private tecnicoService:TecnicoService,
     private service:ChamadoService,
     private toast:ToastrService,
+    private route: ActivatedRoute,
     private router:Router){}
 
   ngOnInit(): void {
 
     this.loadCliente();
     this.loadTecnico();
+
+    this.chamado.id = this.route.snapshot.paramMap.get('id');
+
+    this.loadById();
     
   }
 
@@ -92,6 +98,17 @@ export class ChamadoCreateComponent implements OnInit{
 
   }
 
+  loadById()
+  {
+      this.service.findById(this.chamado.id).subscribe(resposta=>{
+
+        this.chamado = resposta;
+        this.clienteID = this.chamado.cliente?.id;
+        this.tecnicoID = this.chamado.tecnico?.id;
+
+      });
+  }
+
   create(){
 
     this.chamado.tecnico = this.getPessoa(this.tecnicoID,'dev');
@@ -107,5 +124,6 @@ export class ChamadoCreateComponent implements OnInit{
     })
 
   }
+
 
 }

@@ -14,7 +14,10 @@ import { ClienteListComponent } from './pages/cliente-list/cliente-list.componen
 import { ClienteCreateComponent } from './pages/cliente-create/cliente-create.component';
 import { ClienteUpdateComponent } from './pages/cliente-update/cliente-update.component';
 import { ClienteDeleteComponent } from './pages/cliente-delete/cliente-delete.component';
+
 import { ChamadoListComponent } from './pages/chamado/chamado-list/chamado-list.component';
+import { ChamadoCreateComponent } from './pages/chamado-create/chamado-create.component';
+import { ChamadoUpdateComponent } from './pages/chamado-update/chamado-update.component';
 
 const routes: Routes = [
 
@@ -68,6 +71,14 @@ const routes: Routes = [
       {
         path:'chamado',
         component:ChamadoListComponent
+      },
+      {
+        path:'chamado/create',
+        component:ChamadoCreateComponent
+      },
+      {
+        path:'chamado/update/:id',
+        component:ChamadoUpdateComponent
       }
      
     ]
